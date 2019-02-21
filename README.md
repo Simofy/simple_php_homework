@@ -1,2 +1,7 @@
-# simple_php_homework
-PHP homework
+# simple php homework
+
+## Running
+
+```sh
+php index.php
+```
