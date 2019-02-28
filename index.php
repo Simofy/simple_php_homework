@@ -1,7 +1,20 @@
 <?php
 $text = "Beyond these basic elements, a complete sentence must also express a complete thought.";
 function checkInText($word, $text){
-	return preg_match("/\b".$word."\b/", $text);
+	$array = str_split($text);
+	$index = 0;
+	for($i = 0; $i < count($array); $i++){
+		$char = $array[$i];
+		if($char == ' ' || $char == '.' || $char == ','){
+			$ats = "";
+			for($k = $index; $k < $i; $k++){
+				$ats .= $array[$k];
+			}
+			$index = $i + 1;
+			if($word == $ats)return true;
+		}
+	}
+	return false;
 }
 echo "_____1. ______\n";
 echo "To exit loop press Enter without input.\n";
